@@ -1,0 +1,211 @@
+[gd_scene load_steps=14 format=3 uid="uid://dl2t43l6gvswx"]
+
+[ext_resource type="SpriteFrames" uid="uid://bllrl03hkw0hq" path="res://Buttons/BackgroundAnimation/BackgroundAnimationFrames.tres" id="1_3ejjq"]
+[ext_resource type="Script" path="res://animated_sprite_2d.gd" id="2_ixeui"]
+[ext_resource type="Texture2D" uid="uid://bx67uibisyj5t" path="res://Registration/Level1Button.png" id="6_6klwn"]
+[ext_resource type="Texture2D" uid="uid://bjnapr4qmb4u" path="res://Registration/Text Box.png" id="6_atqpq"]
+[ext_resource type="Texture2D" uid="uid://b7kxt6iy5wm7r" path="res://Registration/Submit.png" id="7_5f65y"]
+[ext_resource type="Texture2D" uid="uid://cgp103b5ea5t0" path="res://Registration/Level2Button.png" id="7_lm6nj"]
+[ext_resource type="Texture2D" uid="uid://ihmttj0k421p" path="res://Registration/Level3Button.png" id="8_ik2y7"]
+[ext_resource type="Texture2D" uid="uid://dwru1l1droldf" path="res://Registration/RegisterButton.png" id="8_nh82x"]
+[ext_resource type="Texture2D" uid="uid://chqebspxvry26" path="res://logout.png" id="9_1ml08"]
+[ext_resource type="Texture2D" uid="uid://bfovfg0avene5" path="res://Logo.png" id="10_yp22x"]
+[ext_resource type="Texture2D" uid="uid://y1o3pgc2wlwl" path="res://Login.png" id="11_g1wg8"]
+[ext_resource type="AudioStream" uid="uid://dnflayf1533l3" path="res://menu.mp3" id="12_4l3ot"]
+[ext_resource type="Texture2D" uid="uid://uo0o2xlpkdci" path="res://Message (1).png" id="13_y3l2g"]
+
+[node name="MainMenu" type="Node2D"]
+position = Vector2(0, 33)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(400, 100)
+scale = Vector2(1.02, 1)
+sprite_frames = ExtResource("1_3ejjq")
+frame = 8
+frame_progress = 0.209418
+script = ExtResource("2_ixeui")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Username" type="TextureRect" parent="Control"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_atqpq")
+
+[node name="UsernameRegistered" type="LineEdit" parent="Control/Username"]
+visible = false
+layout_mode = 0
+offset_right = 67.0625
+offset_bottom = 31.0
+placeholder_text = "Enter Username"
+max_length = 20
+
+[node name="UsernameLogin" type="LineEdit" parent="Control/Username"]
+visible = false
+layout_mode = 0
+offset_right = 67.0625
+offset_bottom = 31.0
+
+[node name="Password" type="TextureRect" parent="Control"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_atqpq")
+
+[node name="PasswordRegistered" type="LineEdit" parent="Control/Password"]
+layout_mode = 0
+offset_right = 67.0625
+offset_bottom = 31.0
+placeholder_text = "Password"
+secret = true
+
+[node name="PasswordLogin" type="LineEdit" parent="Control/Password"]
+layout_mode = 0
+offset_right = 67.0625
+offset_bottom = 31.0
+secret = true
+
+[node name="Age" type="TextureRect" parent="Control"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_atqpq")
+
+[node name="AgeRegistered" type="LineEdit" parent="Control/Age"]
+layout_mode = 0
+offset_right = 67.0625
+offset_bottom = 31.0
+placeholder_text = "Age"
+
+[node name="Name" type="TextureRect" parent="Control"]
+visible = false
+layout_mode = 0
+offset_right = 67.0625
+offset_bottom = 40.0
+texture = ExtResource("6_atqpq")
+
+[node name="NameRegistered" type="LineEdit" parent="Control/Name"]
+layout_mode = 0
+offset_right = 67.0625
+offset_bottom = 31.0
+placeholder_text = "Name"
+
+[node name="SubmitRegistration" type="TextureButton" parent="Control"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("7_5f65y")
+
+[node name="SubmitLogin" type="TextureButton" parent="Control"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("7_5f65y")
+
+[node name="Storing" type="HTTPRequest" parent="Control"]
+
+[node name="RegistrationButton" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("8_nh82x")
+
+[node name="LoginErrorMessage" type="Label" parent="Control"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Invalid Credentials"
+
+[node name="MissingCreds" type="Label" parent="Control"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Missing Username or Password"
+
+[node name="AllFieldsRequired" type="Label" parent="Control"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "All fields required."
+
+[node name="AgeMustBeANumber" type="Label" parent="Control"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Age needs to be a number"
+
+[node name="levelnode2D" type="Node2D" parent="Control"]
+
+[node name="smallLevel1Button" type="TextureButton" parent="Control/levelnode2D"]
+offset_left = -332.0
+offset_top = -158.0
+offset_right = 344.0
+offset_bottom = 140.0
+texture_normal = ExtResource("6_6klwn")
+
+[node name="smallLevel2Button" type="TextureButton" parent="Control/levelnode2D"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("7_lm6nj")
+
+[node name="smallLevel3Button" type="TextureButton" parent="Control/levelnode2D"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("8_ik2y7")
+
+[node name="Logout" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("9_1ml08")
+
+[node name="Logo" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("10_yp22x")
+
+[node name="LoginSign" type="TextureRect" parent="Control"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("11_g1wg8")
+
+[node name="Switchtologin" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("11_g1wg8")
+
+[node name="mainmenumusic" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("12_4l3ot")
+autoplay = true
+
+[node name="Levelmessage" type="TextureRect" parent="Control"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("13_y3l2g")
+
+[connection signal="request_completed" from="Control/Storing" to="Background" method="_on_storing_request_completed"]
