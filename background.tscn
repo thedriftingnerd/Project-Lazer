@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://dl2t43l6gvswx"]
 
 [ext_resource type="SpriteFrames" uid="uid://bllrl03hkw0hq" path="res://Buttons/BackgroundAnimation/BackgroundAnimationFrames.tres" id="1_3ejjq"]
-[ext_resource type="Script" path="res://animated_sprite_2d.gd" id="2_ixeui"]
+[ext_resource type="Script" path="res://mainmenu.gd" id="2_ixeui"]
 [ext_resource type="Texture2D" uid="uid://bx67uibisyj5t" path="res://Registration/Level1Button.png" id="6_6klwn"]
 [ext_resource type="Texture2D" uid="uid://bjnapr4qmb4u" path="res://Registration/Text Box.png" id="6_atqpq"]
 [ext_resource type="Texture2D" uid="uid://b7kxt6iy5wm7r" path="res://Registration/Submit.png" id="7_5f65y"]
